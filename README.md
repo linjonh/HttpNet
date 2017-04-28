@@ -1,4 +1,4 @@
-#HttpNet项目结构如下
+# HttpNet项目结构如下
 ![HttpNet项目结构](http://git.oschina.net/uploads/images/2016/0919/132807_3e935005_494015.png "HttpNet项目结构")
 
 HttpNet网络请求框架基于HttpUrlConnection，采用Client + Request + Call的请求模型，支持HTTPS，支持同步和异步方法，支持Rxjava，支持上传和下载监听，同步请求配合RxJava十分方便实现线程切换
@@ -11,7 +11,7 @@ HttpNet网络请求框架基于HttpUrlConnection，采用Client + Request + Call
 compile 'com.haibin:httpnet:1.1.5'
 ```
 
-##RxJava断点下载
+## RxJava断点下载
 ```java
 final File rangeFile = new File(Environment.getExternalStorageDirectory().getPath() + "/cnblogs.apk");
 final long readySize = rangeFile.exists() ? rangeFile.length() : 0;
@@ -74,7 +74,7 @@ Observable.create(new ObservableOnSubscribe<String>() {
                 });
 ```
 
-##RxJava同步上传监听：
+## RxJava同步上传监听：
 ```java
 final Request request = new Request.Builder()
                 .url("http://upload.cnblogs.com/ImageUploader/TemporaryAvatarUpload")
@@ -108,7 +108,7 @@ final Request request = new Request.Builder()
                 });
 ```
 
-##RxJava同步下载监听：
+## RxJava同步下载监听：
 ```java
 
 Observable.create(new ObservableOnSubscribe<String>() {
@@ -143,7 +143,7 @@ Observable.create(new ObservableOnSubscribe<String>() {
 
 ```
 
-###默认支持Https认证，如果使用数字证书,在执行请求之前使用下面3种API导入证书即可
+### 默认支持Https认证，如果使用数字证书,在执行请求之前使用下面3种API导入证书即可
 
 ```java
 
@@ -168,7 +168,7 @@ Request request = new Request.Builder()
 ```
 
 
-##GET异步请求构建:
+## GET异步请求构建:
 ```java
 
 Request request = new Request.Builder().encode("UTF-8")
@@ -178,7 +178,7 @@ Request request = new Request.Builder().encode("UTF-8")
                 .build();
 ```
 
-##POST异步请求构建:
+## POST异步请求构建:
 ```java
 
 RequestParams params = new RequestParams()
@@ -207,7 +207,7 @@ Request request = new Request.Builder()
        
 ```
 
-##执行请求:
+## 执行请求:
 ```java
 
 HttpNetClient client = new HttpNetClient();
@@ -237,7 +237,7 @@ client.newCall(request)
 
 ```
 
-##Licenses
+## Licenses
 - Copyright (C) 2013 huanghaibin_dev <huanghaibin_dev@163.com>
  
 - Licensed under the Apache License, Version 2.0 (the "License");
